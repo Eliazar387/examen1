@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario Personalizado en HTML5</title>
+    <style>
+        body {
+            background-color: #e6f7ff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+        form {
+            width: 60%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #005580;
+        }
+        p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"], input[type="reset"] {
+            width: auto;
+            background-color: #005580;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover, input[type="reset"]:hover {
+            background-color: #0073e6;
+        }
+        .img-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Formulario de Información Personal</h1>
+
+<form action="procesar_formulario.php" method="POST">
+    
+    <p><b>Nombre Completo</b><br>
+    <input type="text" name="nombre" placeholder="Escribe tu nombre completo" required></p>
+    
+    <p><b>Correo Electrónico</b><br>
+    <input type="email" name="email" placeholder="Escribe tu correo" required></p>
+    
+    <p><b>Fecha de Nacimiento</b><br>
+    <input type="date" name="fecha_nacimiento" required></p>
+    
+    <p><b>Género</b><br>
+    <input type="radio" name="genero" value="M" checked> Masculino
+    <input type="radio" name="genero" value="F"> Femenino
+    <input type="radio" name="genero" value="O"> Otro</p>
+
+    <p><b>Número de miembros de la familia</b><br>
+    <input type="number" name="miembros" min="1" max="20" placeholder="Escribe un número" required></p>
+
+    <p><b>Idiomas que conoces</b><br>
+    <input type="checkbox" name="idioma[]" value="Español"> Español <br>
+    <input type="checkbox" name="idioma[]" value="Inglés"> Inglés <br>
+    <input type="checkbox" name="idioma[]" value="Francés"> Francés <br>
+    <input type="checkbox" name="idioma[]" value="Alemán"> Alemán <br>
+    <input type="checkbox" name="idioma[]" value="Otro"> Otro</p>
+    
+    <p><b>Selecciona tus hobbies favoritos</b><br>
+    <select name="hobbies[]" multiple size="5">
+        <option value="Deportes">Deportes</option>
+        <option value="Lectura">Lectura</option>
+        <option value="Cine">Cine</option>
+        <option value="Música">Música</option>
+        <option value="Viajar">Viajar</option>
+    </select></p>
+    
+    <p><b>Escribe un comentario sobre tu personalidad</b><br>
+    <textarea name="comentarios" rows="4" cols="50" placeholder="Cuéntanos sobre ti..." required></textarea></p>
+
+    <div class="img-container">
+        <img src="https://www.ecured.cu/images/0/0e/Logo_upds.png" alt="upds logo">
+    </div>
+    
+    <p><input type="submit" value="Enviar">&nbsp;&nbsp;
+    <input type="reset" value="Cancelar"></p>
+</form>
+
+</body>
+</html>
